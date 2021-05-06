@@ -1,6 +1,7 @@
 const { gql, ApolloServer } = require("apollo-server");
 
-const db = [
+const db = {
+  usuarios: [
   {
     id: 1,
     nome: "Paulo",
@@ -15,12 +16,12 @@ const db = [
     telefone: "34 1234 1234",
     perfil: 2,
   },
-];
-
-const perfis = [
-  { id: 1, descricao: "ADMIN" },
-  { id: 2, descricao: "NORMAL" },
-];
+  ],
+  perfis : [
+    { id: 1, descricao: "ADMIN" },
+    { id: 2, descricao: "NORMAL" },
+   ],
+};
 
 const typeDefs = gql`
   type Usuario {
@@ -30,13 +31,16 @@ const typeDefs = gql`
     telefone: String
     perfil: Perfil
   }
+
   type Perfil {
     id: Int
     descricao: String
   }
+
   type Query {
     usuario(id: Int): Usuario
     perfis: [Perfil]
+    usuarios: [Usuario]
   }
 `;
 const resolvers = {
@@ -47,12 +51,12 @@ const resolvers = {
   },
   Query: {
     usuario(obj, args) {
-      console.log(obj);
-      return db.find((db) => db.id === args.id);
+      return db.usuarios.find((db) => db.id === args.id);
     },
     perfis() {
-      return perfis;
+      return db.perfis;
     },
+    usuarios: () => db.usuarios
   },
 };
 
