@@ -4,10 +4,10 @@
 - [x] Array | Non-Null
 - [x] Schema & Query | Object Types | Fields
 - [x] Schema & Query | Arguments
-- [ ] Schema & Query | Arg do Resolver
-- [ ] Schema & Query | Fragments & Aliases
-- [ ] Schema & Query | Operation Name & Enums
-- [ ] Schema & Query | Directives & Variables
+- [x] Schema & Query | Arg do Resolver
+- [x] Schema & Query | Fragments & Aliases
+- [x] Schema & Query | Operation Name & Enums
+- [x] Schema & Query | Directives & Variables
 - [ ] Mutation
 - [ ] Mutation | Type Input
 - [ ] Args Context e Info
