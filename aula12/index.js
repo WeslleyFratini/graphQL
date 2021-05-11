@@ -7,21 +7,12 @@ const typeDefs = gql`
     NORMAL
   }
 
-  type Usuario {
-    id: Int
-    nome: String
-    email: String
-    telefone: String
-    perfil: Perfil
-  }
   type Perfil {
     id: Int
     descricao: TipoPerfil
   }
   type Query {
-    usuario(id: Int): Usuario
-    perfis: [Perfil]
-    usuarios: [Usuario]
+    
   }
 `;
 const resolvers = {
