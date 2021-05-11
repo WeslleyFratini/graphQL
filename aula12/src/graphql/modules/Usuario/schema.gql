@@ -8,6 +8,5 @@ type Usuario {
 
 type Query {
   usuario(id: Int): Usuario
-  perfis: [Perfil]
   usuarios: [Usuario]
 }
