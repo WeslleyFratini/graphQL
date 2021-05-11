@@ -1,12 +1,15 @@
-type Usuario {
-  id: Int
-  nome: String
-  email: String
-  telefone: String
-  perfil: Perfil
-}
+const db = require("../../../db");
 
-type Query {
-  usuario(id: Int): Usuario
-  usuarios: [Usuario]
-}
+module.exports = {
+  Usuario: {
+    perfil(usuario) {
+      return db.perfis.find((p) => p.id === usuario.perfil_id);
+    },
+  },
+  Query: {
+    usuario(obj, args) {
+      return db.usuarios.find((db) => db.id === args.id);
+    },
+    usuarios: () => db.usuarios,
+  },
+};
