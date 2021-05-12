@@ -9,7 +9,7 @@
 - [x] Schema & Query | Operation Name & Enums
 - [x] Schema & Query | Directives & Variables
 - [x] Mutation
-- [ ] Mutation | Type Input
+- [x] Mutation | Type Input
 - [ ] Args Context e Info
 - [ ] DataSources ApolloServer
 - [ ] Context
