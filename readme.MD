@@ -8,7 +8,7 @@
 - [x] Schema & Query | Fragments & Aliases
 - [x] Schema & Query | Operation Name & Enums
 - [x] Schema & Query | Directives & Variables
-- [ ] Mutation
+- [x] Mutation
 - [ ] Mutation | Type Input
 - [ ] Args Context e Info
 - [ ] DataSources ApolloServer
