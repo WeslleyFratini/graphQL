@@ -25,7 +25,7 @@ module.exports = {
     usuarios: () => db.usuarios,
   },
   Mutation: {
-    criarUsuario(_, {data}) {
+    criarUsuario(_, { data }) {
       const { email } = data;
 
       const usuarioExistente = db.usuarios.some((u) => u.email === email);
@@ -44,18 +44,18 @@ module.exports = {
 
       return novoUsuario;
     },
-    atualizarUsuario(_, { id, data }){
-      const usuario = db.usuarios.find(u => u.id === id)
-      const indice = db.usuarios.findIndex(u => u.id === id)
+    atualizarUsuario(_, { id, data }) {
+      const usuario = db.usuarios.find((u) => u.id === id);
+      const indice = db.usuarios.findIndex((u) => u.id === id);
 
       const novoUsuario = {
         ...usuario,
-        ...data
-      }
+        ...data,
+      };
 
-      db.usuarios.splice(indice, 1, novoUsuario)
+      db.usuarios.splice(indice, 1, novoUsuario);
 
-      return novoUsuario
-    }
+      return novoUsuario;
+    },
   },
 };

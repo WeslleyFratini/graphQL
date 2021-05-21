@@ -19,8 +19,12 @@ module.exports = {
     },
   },
   Query: {
-    usuario(_, { data }) {
-      return db.usuarios.find((db) => db.id === data.id);
+    usuario(_, { filtro }) {
+      if (filtro.id) {
+        return db.usuarios.find((db) => db.id === filtro.id);
+      } else {
+        return db.usuarios.find((db) => db.email === filtro.email);
+      }
     },
     usuarios: () => db.usuarios,
   },
@@ -31,7 +35,7 @@ module.exports = {
       const usuarioExistente = db.usuarios.some((u) => u.email === email);
 
       if (usuarioExistente) {
-        throw new Error(`Usuário existente: ${data.nome}`);
+        throw new Error(`Usuário Existente: ${data.nome}`);
       }
 
       const novoUsuario = {
