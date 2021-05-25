@@ -10,7 +10,7 @@
 - [x] Schema & Query | Directives & Variables
 - [x] Mutation
 - [x] Mutation | Type Input
-- [ ] Args Context e Info
+- [x] Args Context e Info
 - [ ] DataSources ApolloServer
 - [ ] Context
 - [ ] useMutation | AutoReflesh | Cache
