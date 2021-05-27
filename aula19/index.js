@@ -8,6 +8,7 @@ const server = new ApolloServer({
   dataSources: () => ({
     gitHubService: GitHubService,
     userRegisterService: UserRegisterService,
+    tasksService: TasksRegisterService
   }),
 });
 
